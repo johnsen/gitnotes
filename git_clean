@@ -1,0 +1,8 @@
+[16:28] <adi> I like git clean -d -f ; git reset --hard
+[16:28] <adi> This will wipe all dirty files.
+[16:28] <adi> (make sure your series file is still correct afterwards)
+[16:31] --> hugoxrosa has joined this channel (~Hugo@201-0-162-177.dial-up.telesp.net.br).
+[16:32] <jacks__> adi: hmm still same error
+[16:36] <jacks__> series file looks good
+[16:36] <aalex> adi, To avoid non-clean stuff, I use --build-area
+[16:37] <aalex> --build-area=../build

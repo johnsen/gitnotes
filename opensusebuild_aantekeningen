@@ -1,0 +1,31 @@
+ Usually, you do this:
+[21:56] <adi> dpkg-src -x *.dsc
+[21:56] <adi> extracts you orig.tar.gz and applies diff.gz
+[21:57] <adi> then you change something in debian/, i.e. control/changelog
+[21:57] <adi> You then say "debuild -uc -us" or dpkg-buildpackage in the toplevel package directory
+[21:57] <adi> which creates you the new diff.gz
+[21:59] <flower> ok, dpkg-src: command not found
+[22:11] <adi> sorry, dpkg-source
+
+
+
+orig file
+
+
+22:50] <flower> dpkg-genchanges: not including original source code in upload
+[22:50] <flower> is that normal?
+[22:51] <flower> or has that something to do with: dpkg-buildpackage: warning: Failed to sign .dsc and .changes file
+[22:51] <flower> (I can fix that I think)
+[22:51] <womble> flower: Normal, yes, related, no.
+[22:52] <-- vagrantc has left this server (Quit: leaving).
+[22:56] <flower> ok thanks
+[22:56] <Tolimar> flower: Upload a higher package revision than -1?  Then it's normal.  Since the orig-source got already uploaded with the package revision -1, there's no need to upload it again.
+[23:05] --> yziquel has joined this channel (~yziquel@85.218.92.99).
+[23:06] <-- woakas has left this server (Read error: No route to host).
+[23:09] <diocles> flower: To change it you can use '-sa' to debuild, and you'll need to do this if uploading to mentors.debian.net.
+[23:10] <flower> diocles: -sa produces a orig-source?
+[23:11] <womble> Yes.
+[23:11] <flower> ok
+
+
+apt-get build-dep <pkg>

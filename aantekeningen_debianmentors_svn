@@ -1,0 +1,14 @@
+[15:02] <flower> ok
+[15:02] <KiBi> usually $oldversion+svnNNNN or $nextversion~svnNNNN
+[15:03] <KiBi> depending on whether you're advertising the version based on the current/released version, or WRT the next one
+[15:03] <-- zubr2 has left this server (Ping timeout: 480 seconds).
+[15:04] <-- twb has left this server (Remote host closed the connection).
+[15:05] <nthykier> I usually use the $oldversion+svnNNNN one; it is easier to mangle in the watch file
+[15:06] <KiBi> nthykier: depends on whether you're trying to communicate it's way just/way past $old, or right before $new
+[15:06] <KiBi> s/way //
+[15:06] <nthykier> KiBi: true; but how do you mangle the ~svnNNNN one in a watch file?
+[15:07] <nthykier> or would you just disable the watch until next release?
+[15:07] <KiBi> just mangle svn, and let dehs claim we have a too new version :)
+[15:08] <KiBi> mangle it too $next~, so that it still detects when $next is released, I guess?
+[15:08] <KiBi> s/too/to/ (meh @ typos)
+[15:10] <nthykier> Okay - I will keep that in mind if I need a svn checkout again.
