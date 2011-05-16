@@ -1,0 +1,19 @@
+[14:53] <arand> flower: If you just run dh-make in the package directory you will get one
+[14:54] <flower> arand: ok, but there is no package yet, only the files
+[14:55] <arand> So you have a directory full of these files you want to install?
+[14:56] <flower> yes, some menu related files, one should go into /usr/share/applications the other in /etc/xdg/menus etc
+[14:56] <arand> rename that directory to packagename-3.5.6 (e.g.) and run dh-make inside it to get started.
+[14:56] --> andresmujica has joined this channel (~andresmuj@ubuntu/member/andresmujica).
+[14:57] <arand> s/dh-make/dh_make/
+[14:59] <arand> And if you do not have a tarball from the original source  you may want to use --createorig otherwise, rename it as per packagename_up.stream.version.orig.tar.gz
+[15:00] <arand> flower: E.g. packagename_3.5.6.orig.tar.gz
+[15:00] <flower> arand: ok
+[15:04] <flower> hmm ok that's a start
+[15:07] <-- akshatj has left this server (Ping timeout: 240 seconds).
+[15:10] <-- c_korn has left this server (Quit: Software you want www.getdeb.net).
+[15:11] --> danohuiginn has joined this channel (~dan@dslb-088-074-025-125.pools.arcor-ip.net).
+[15:15] --> soultekkie has joined this channel (~soultekki@a89-152-75-45.cpe.netcabo.pt).
+[15:16] --> devfil has joined this channel (~dfiloni@ubuntu/member/devfil).
+[15:22] <flower> arand: made an install file http://fpaste.org/VuXe/
+[15:23] *** med_out is now known as medberry.
+[15:25] <arand> flower: Try to run debuild and then check in debian/packagename/* what items got installed.
