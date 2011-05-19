@@ -1,0 +1,3 @@
+pbuilder-dist lucid i386 create
+
+pbuilder-dist lucid i386 build blah.dsc
