@@ -1,0 +1,39 @@
+[13:21] <adi> Ok, merged now.
+[13:21] <adi> Do you know how to resolve merge conflicts in a file?
+[13:22] <flower> no
+[13:22] <adi> There are two ways, one is really easy:
+[13:22] <adi> Get the whole file from upstream (here: example-clients/connect.c), copy it to your working directory, then, say "git add" and "git commit" afterwards. Done.
+[13:23] <adi> The other option: edit the file (instead of copying), search for "==="
+[13:23] <adi> Everything above this line to <<<< HEAD should be removed, everything below this line til >>>> upstream/1.9.7 should be kept.
+[13:23] <adi> Remove the === and the >>> lines.
+[13:24] <adi> (there are three occurances of these lines)
+[13:24] <flower> how do you grab the file from upstream? working dir is in this case the jack2 git dir?
+[13:24] <adi> Once done, say git add and git commit.
+[13:24] <adi> Upstream files: extract the tarball to a different directory.
+[13:24] <flower> ok
+[13:24] <adi> And yes, the working directory is the git dir.
+[13:25] <flower> did you make an upstream branch?
+[13:25] <adi> I have already merged everything, if I sign up at github, I could probably push it.
+[13:25] <flower> if you want
+[13:25] <adi> Everything was in place.
+[13:25] <flower> ok good
+[13:26] <flower> you can just push it. Do I have to accept those changes somewhere?
+[13:26] <adi> Damn signup procedure. Let's simply pull from my repo.
+[13:27] <adi> So abort everything you have so far by typing git reset --hard
+[13:28] <flower> I did a fresh clone
+[13:31] <flower> pull from your repo?
+[13:32] <adi> Yep. git pull git://hex.inf-ra.uni-jena.de/jack2
+[13:32] <adi> Should give you everything
+[13:32] <adi> Or directly clone from it, if you like
+[13:33] <flower> and how do I get it on github?
+[13:33] <flower> or just make a new repo on github
+[13:33] <adi> You then say git push git@github.com:johnson/jack2
+[13:33] <adi> Or whatever the URL was.
+[13:34] <adi> That's the basic idea behind git: you can fetch, pull and push from and to different repos.
+[13:34] <flower> ok
+[13:35] <flower> fatal: unable to connect a socket (Network is unreachable)
+[13:35] <flower> git clone git://hex.inf-ra.uni-jena.de/jack2
+[13:37] <adi> git clone git://racl00.inf-ra.uni-jena.de/srv/git/jack2
+[13:37] <flower> k
+[13:38] <adi> hex seems to be firewalled from the outside. Didn't know that.
+[13:39] * flower cloned and pushed
